@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ba07b5e502.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header>
+        <div id="header-img">
+            <a href="http://coolors.co">
+                <img class="coolors-logo" src="./src/coolors-logo.svg" alt="The logo of Coolors.co">
+            </a>
+        </div>
+
+        <div id="header-text">
+            <div id="header-app-logo">
+                <a href="http://apps.apple.com/app/coolors/id956480678" target="_blank" rel="noopener noreferrer">
+                    <img class="app_store_logo" src="./src/coolors.co_mobile.png" alt="Coolors.co App Store logo">Coolors for iOS
+                </a>
+            </div>
+
+            <div id="header-app-info">
+                <a href="http://apps.apple.com/app/coolors/id956480678" target="_blank" rel="noopener noreferrer">The essential app for any designer.</a>
+                <a class="blue-link" href="http://apps.apple.com/app/coolors/id956480678" target="_blank" rel="noopener noreferrer">Download now!</a>
+            </div>
+
+        </div>
+
+        <div id="header-nav">
+            <div class="header-nav-span" id="nav-generate">
+                <a href="" rel="noopener noreferrer" style="color: #0066FF;">Generate</a>
+            </div>
+
+            <div class="header-nav-span" id="nav-explore">
+                <a href="https://coolors.co/palettes/trending" target="_blank" rel="noopener noreferrer">Explore</a>
+            </div>
+
+            <div class="header-nav-span" id="nav-more">More
+                <i class="fas fa-chevron-down"></i>
+            </div>
+
+            <button class="nav-btn" id="sign-in-btn">Sign In</button>
+
+            <button class="nav-btn" id="sign-up-btn">Sign Up</button>
+        </div>
+
+        <!-- NAV MORE WINDOW -->
+        <div id="nav-more-window" class="window hide" style="background: #fff;">
+            <ul>
+                <div class="nav-more-window-top">
+                    <li class="nav-more-li">
+                        <a href="http://" rel="noopener noreferrer">Color picker</a>
+                    </li>
+                    <li class="nav-more-li">
+                        <a href="http://" rel="noopener noreferrer">Pick pallete from photo</a>
+                    </li>
+                    <li class="nav-more-li">
+                        <a href="http://" rel="noopener noreferrer">Create a colage</a>
+                    </li>
+                    <li class="nav-more-li">
+                        <a href="http://" rel="noopener noreferrer">Make a gradient pallete</a>
+                    </li>
+                    <li class="nav-more-li">
+                        <a href="http://" rel="noopener noreferrer">Create a gradient</a>
+                    </li>
+                    <li class="nav-more-li">
+                        <a href="http://" rel="noopener noreferrer">Explore gradients</a>
+                    </li>
+                    <li class="nav-more-li">
+                        <a href="http://" rel="noopener noreferrer">Contrast checker</a>
+                    </li>
+                </div>
+
+                <div class="nav-more-window-buttom">
+                    <li class="nav-more-li">
+                        <a href="http://" target="_blank" rel="noopener noreferrer">iOS app</a>
+                    </li>
+                    <li class="nav-more-li">
+                        <a href="http://" target="_blank" rel="noopener noreferrer">Adobe addon</a>
+                    </li>
+                    <li class="nav-more-li">
+                        <a href="http://" target="_blank" rel="noopener noreferrer">Chrome extension</a>
+                    </li>
+                </div>
+            </ul>
+        </div>
+    </header>
+
+    <nav>
+        <div id="generator-info">Press the spacebar to generate color palettes!</div>
+
+        <div id="generator-nav">
+            <button class="generator-nav-btn fav-colors-btn">Favorite</button>
+            <button class="generator-nav-btn">Save pallette</button>
+            <button class="generator-nav-btn"><i class="fas fa-bars rotate0deg"></i></button>
+        </div>
+    </nav>
+
+    <main>
+        <div id="colors-generator">
+            <div id="color-1" class="colors" style="background: rgb(220, 220, 220);">
+                <div class="color-tools">
+                    <div class="tools">
+                        <i class="fas fa-times tool-delete mouse-out"></i>
+                    </div>
+                    <div class="tools">
+                        <i class="far fa-star tool-favorite mouse-out"></i>
+                    </div>
+                    <div class="tools">
+                        <i class="far fa-clone tool-copy mouse-out"></i>
+                    </div>
+                    <div class="tools">
+                        <i class="fas fa-unlock-alt tool-unlock mouse-out"></i>
+                    </div>
+                    <div class="tools">
+                        <i class="fas fa-lock tool-lock mouse-out"></i>
+                    </div>
+                </div>
+
+                <div class="color-info">
+                    <div class="info color-rgb">rgb(220, 220, 220)</div>
+                </div>
+            </div>
+
+            <div id="color-2" class="colors" style="background: rgb(25, 25, 112);">
+                <div class="color-tools">
+                    <div class="tools">
+                        <i class="fas fa-times tool-delete mouse-out"></i>
+                    </div>
+                    <div class="tools">
+                        <i class="far fa-star tool-favorite mouse-out"></i>
+                    </div>
+                    <div class="tools">
+                        <i class="far fa-clone tool-copy mouse-out"></i>
+                    </div>
+                    <div class="tools">
+                        <i class="fas fa-unlock-alt tool-unlock mouse-out"></i>
+                    </div>
+                    <div class="tools">
+                        <i class="fas fa-lock tool-lock mouse-out"></i>
+                    </div>
+                </div>
+
+                <div class="color-info">
+                    <div class="info color-rgb">rgb(25, 25, 112)</div>
+                    <!-- <div class="info color-hex">#191970</div>
+                    <div class="info color-name">MidnightBlue</div> -->
+                </div>
+            </div>
+
+            <div id="color-3" class="colors" style="background: rgb(152, 251, 152);">
+                <div class="color-tools">
+                    <div class="tools">
+                        <i class="fas fa-times tool-delete mouse-out"></i>
+                    </div>
+                    <div class="tools">
+                        <i class="far fa-star tool-favorite mouse-out"></i>
+                    </div>
+                    <div class="tools">
+                        <i class="far fa-clone tool-copy mouse-out"></i>
+                    </div>
+                    <div class="tools">
+                        <i class="fas fa-unlock-alt tool-unlock mouse-out"></i>
+                    </div>
+                    <div class="tools">
+                        <i class="fas fa-lock tool-lock mouse-out"></i>
+                    </div>
+                </div>
+
+                <div class="color-info">
+                    <div class="info color-rgb">rgb(152, 251, 152)</div>
+                    <!-- <div class="info color-hex">#98FB98</div>
+                    <div class="info color-name">PaleGreen</div> -->
+                </div>
+            </div>
+
+            <div id="color-4" class="colors" style="background: rgb(240, 230, 140);">
+                <div class="color-tools">
+                    <div class="tools">
+                        <i class="fas fa-times tool-delete mouse-out"></i></div>
+                    <div class="tools">
+                        <i class="far fa-star tool-favorite mouse-out"></i></div>
+                    <div class="tools">
+                        <i class="far fa-clone tool-copy mouse-out"></i></div>
+                    <div class="tools">
+                        <i class="fas fa-unlock-alt tool-unlock mouse-out"></i>
+                    </div>
+                    <div class="tools">
+                        <i class="fas fa-lock tool-lock mouse-out"></i>
+                    </div>
+                </div>
+
+                <div class="color-info">
+                    <div class="info color-rgb">rgb(240, 230, 140)</div>
+                    <!-- <div class="info color-hex">#F0E68C</div>
+                    <div class="info color-name">Khaki</div> -->
+                </div>
+            </div>
+
+            <div id="color-5" class="colors" style="background: rgb(139, 0, 0);">
+                <div class="color-tools">
+                    <div class="tools">
+                        <i class="fas fa-times tool-delete mouse-out"></i>
+                    </div>
+                    <div class="tools">
+                        <i class="far fa-star tool-favorite mouse-out"></i>
+                    </div>
+                    <div class="tools">
+                        <i class="far fa-clone tool-copy mouse-out"></i>
+                    </div>
+                    <div class="tools">
+                        <i class="fas fa-unlock-alt tool-unlock mouse-out"></i>
+                    </div>
+                    <div class="tools">
+                        <i class="fas fa-lock tool-lock mouse-out"></i>
+                    </div>
+                </div>
+
+                <div class="color-info">
+                    <div class="info color-rgb">rgb(139, 0, 0)</div>
+                    <!-- <div class="info color-hex">#8B0000</div>
+                    <div class="info color-name">FireBrick</div> -->
+                </div>
+            </div>
+
+            <div id="fav-colors" class="hide" style="background: #fff;">
+                <ul>
+                    <li>Rgb Code 1
+                        <div id="example-color-1" class="example-color"></div>
+                    </li>
+                    <li>Rgb Code 2
+                        <div id="example-color-2" class="example-color"></div>
+                    </li>
+                    <li>Rgb Code 3
+                        <div id="example-color-3" class="example-color"></div>
+                    </li>
+                    <li>Rgb Code 4
+                        <div id="example-color-4" class="example-color"></div>
+                    </li>
+                    <li>Rgb Code 5
+                        <div id="example-color-5" class="example-color"></div>
+                    </li>
+                    <li>Rgb Code 6
+                        <div id="example-color-6" class="example-color"></div>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="menu-bar" class="hide" style="background: #fff;">
+                <ul>
+                    <li><a href="#">Lorem, ipsum.</a></li>
+                    <li><a href="#">Lorem, ipsum.</a></li>
+                    <li><a href="#">Lorem, ipsum.</a></li>
+                    <li><a href="#">Lorem, ipsum.</a></li>
+                    <li><a href="#">Lorem, ipsum.</a></li>
+                    <li><a href="#">Lorem, ipsum.</a></li>
+                    <li><a href="#">Lorem, ipsum.</a></li>
+                    <li><a href="#">Lorem, ipsum.</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- SIGN IN WINDOW -->
+    <div id="sign-in-window" class="window hide">
+        <!-- <div id="sign-in-window"> -->
+        <div id="sign-in-window-welcome">
+            <i class="fas fa-times sign-in-close"></i>
+            <h1>Hello!</h1>
+            <span class="info">Sign into your account here.</span>
+        </div>
+
+        <form action="/action_page.php" id="sign-in-window-data">
+            <input class="sign-in-input email" type="email" placeholder="Email / Username">
+            <input class="sign-in-input password" type="password" placeholder="Password">
+            <input id="sign-in-submit" type="submit" value="Sign in">
+        </form>
+
+        <div id="sign-in-window-questions">
+            <p class="info">Forgot your password?
+                <button class="blue-link pwd-reset">Reset</button>
+                <!-- <a class="blue-link pwd-reset" href="" rel="noopener noreferrer">Reset</a> -->
+            </p>
+            <br>
+            <p class="info">Don't have an account?
+                <button class="blue-link sign-up-from-sign-in">Sign up</button>
+                <!-- <a class="blue-link" rel="noopener noreferrer">Sign up</a> -->
+            </p>
+        </div>
+    </div>
+
+    <!-- SIGN UP WINDOW -->
+    <div id="sign-up-window" class="window hide">
+        <!-- <div id="sign-up-window"> -->
+        <div id="sign-up-window-welcome">
+            <i class="fas fa-times sign-up-close"></i>
+            <h1>Join Coolors</h1>
+            <span class="info">Sign up to collect your pallets.</span>
+        </div>
+
+        <form action="/action_page.php" id="sign-up-window-data">
+            <input class="sign-up-input name" type="text" placeholder="Full Name">
+            <input class="sign-up-input email" type="email" placeholder="Email / Username">
+            <input class="sign-up-input password" type="password" placeholder="Password">
+            <div id="terms-checkbox">
+                <input type="checkbox" id="terms" name="terms"><label for="terms">I agree to your 
+                    <a href="http://coolors.co/terms-of-service" target="_blank" rel="noopener noreferrer">Terms and Conditions</a>
+                     and 
+                     <a href="http://coolors.co/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                     </label>
+            </div>
+            <div id="newsletter-checkbox">
+                <input type="checkbox" id="newsletter" name="newsletter"><label for="newsletter">I want to subscribe to the newsletter</label>
+            </div>
+
+            <input id="sign-up-submit" type="submit" value="Create your free accunt">
+        </form>
+
+        <div id="sign-up-window-questions">
+            <p class="info">Already registered?
+                <button class="blue-link sign-in-from-sign-out">Sign in</button>
+                <!-- <a class="blue-link" href="" rel="noopener noreferrer">Sign in</a> -->
+            </p>
+            <br>
+        </div>
+    </div>
+
+    <!-- PWD RESET WINDOW -->
+    <div id="pwd-reset-window" class="window hide">
+        <!-- <div id="pwd-reset-window"> -->
+        <div id="pwd-reset-window-welcome">
+            <i class="fas fa-times pwd-reset-close"></i>
+            <h3>Reset password</h3>
+            <p>Enter your email address below and choose a new password.</p>
+        </div>
+
+        <form action="/action_page.php" id="pwd-reset-window-data">
+            <input class="pwd-reset-input email" type="email" placeholder="Email / Username">
+            <input class="pwd-reset-input password" type="password" placeholder="Password">
+            <input id="pwd-reset-submit" type="submit" value="Reset password">
+        </form>
+
+        <div id="pwd-reset-window-questions">
+            <p class="info">Back to
+                <button class="blue-link sign-in">Sign in</button>
+            </p>
+            <br>
+        </div>
+    </div>
+
+    <script src="./main.js "></script>
+    <!-- <script src="./main2.js "></script> -->
+</body>
+
+</html>

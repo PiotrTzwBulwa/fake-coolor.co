@@ -1,0 +1,575 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    --text-color: #666666;
+    --btn-color-ligth: #0066FF;
+    --btn-color-dark: #003b94;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: #fff;
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    height: 8vh;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    color: var(--text-color);
+}
+
+button:hover {
+    cursor: pointer;
+    color: #000;
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    font-size: 1.8rem;
+    margin: 1rem;
+}
+
+.blue-link {
+    color: var(--btn-color-ligth);
+}
+
+
+/* HEADERS */
+
+#header-img {
+    display: inline-block;
+    margin: 0 2rem;
+}
+
+#header-img .coolors-logo {
+    width: 100%;
+    height: 100%;
+}
+
+#header-text {
+    display: flex;
+    width: 55%;
+    padding-top: 1rem;
+    /* margin: 2rem; */
+    /* height: 100%; */
+}
+
+#header-app-logo {
+    /* height: 1rem; */
+    /* display: inline-block; */
+    height: 50%;
+    font-weight: bold;
+}
+
+#header-app-logo a {
+    color: rgb(26, 25, 25);
+}
+
+#header-app-info {
+    padding: 2.6rem 0 0 1rem;
+}
+
+#header-app-logo a:hover {
+    color: var(--btn-color-ligth)
+}
+
+.app_store_logo {
+    height: 4rem;
+    /* margin: 0 0rem; */
+    border: 0.3rem solid #000;
+}
+
+#header-nav {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.header-nav-span {
+    width: 20%;
+    padding: 2rem 0;
+    font-size: 1.8rem;
+    text-align: center;
+    color: var(--text-color);
+    /* border: 0.3rem solid #000; */
+}
+
+.header-nav-span:hover,
+.header-nav-span a:hover {
+    cursor: pointer;
+    font-weight: bold;
+    color: #000;
+}
+
+.nav-btn {
+    width: 20%;
+    height: 3.5rem;
+    margin: 1.3rem 0 0 0;
+    border-radius: 1rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+#sign-in-btn:hover {
+    font-weight: bold;
+    color: #000;
+}
+
+
+/* NAV */
+
+nav {
+    height: 8vh;
+    display: flex;
+    border-top: 1px solid var(--text-color);
+}
+
+#generator-info {
+    width: 80%;
+    height: 100%;
+    padding: 2rem;
+    font-size: 1.8rem;
+    color: var(--text-color);
+}
+
+#generator-nav {
+    display: flex;
+    width: 20%;
+}
+
+.generator-nav-btn {
+    flex: 1;
+    width: 33.3%;
+    font-size: 1.8rem;
+    background: none;
+}
+
+.fa-bars:hover {
+    font-size: 2.2rem;
+}
+
+
+/* MAIN */
+
+main {
+    height: 84vh;
+}
+
+#colors-generator {
+    display: flex;
+    height: 100%;
+}
+
+.colors {
+    flex-direction: column;
+    width: 20%;
+}
+
+.color-tools {
+    padding: 10rem 0;
+    height: 80%;
+    color: var(--text-color);
+}
+
+.tools {
+    display: none;
+    display: block;
+    height: 6rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.color-info {
+    text-align: center;
+    height: 20%;
+    padding-bottom: 5rem;
+    text-align: center;
+}
+
+.color-rgb {
+    height: 50%;
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.color-hex,
+.color-name {
+    height: 25%;
+    margin: 1rem 0;
+}
+
+.tool-delete {
+    cursor: pointer;
+}
+
+.tool-favorite {
+    cursor: pointer;
+}
+
+.tool-copy {
+    cursor: pointer;
+}
+
+.tool-unlock {
+    cursor: pointer;
+}
+
+.tool-lock {
+    cursor: pointer;
+}
+
+#menu-bar {
+    width: 40rem;
+    height: 60vh;
+}
+
+#fav-colors {
+    width: 40rem;
+    height: 60vh;
+}
+
+#fav-colors li {
+    display: inline-block;
+    margin: 1rem;
+}
+
+.example-color {
+    text-align: center;
+    width: 3rem;
+    height: 3rem;
+    background: lime;
+}
+
+.window {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    padding: 1rem;
+    border-radius: 2rem;
+    text-align: center;
+    font-size: 1.8rem;
+    background: #f1f1f1;
+}
+
+
+/* NAV MORE WINDOW */
+
+#nav-more-window {
+    top: -20rem;
+    right: 10rem;
+    margin-right: 0;
+    width: 30rem;
+    height: 40rem;
+}
+
+.nav-more-li a {
+    display: inline-block;
+    width: 25rem;
+    height: 2.6rem;
+    padding: 0.2rem;
+    border-radius: 1rem;
+}
+
+.nav-more-li a:hover {
+    background: #ececec;
+}
+
+.nav-more-window-top {
+    border-bottom: 0.1rem solid var(--text-color);
+}
+
+
+/* SIGN IN WINDOW */
+
+#sign-in-window {
+    width: 40rem;
+    height: 40rem;
+}
+
+.sign-in-close {
+    position: absolute;
+    cursor: pointer;
+    left: 2rem;
+    color: var(--text-color);
+}
+
+#sign-in-window-welcome h1 {
+    margin: 2rem 0;
+}
+
+#sign-in-window-welcome .info {
+    color: var(--text-color);
+}
+
+#sign-in-window-data {
+    margin: 2rem;
+}
+
+#sign-in-window-data input {
+    width: 30rem;
+    height: 2.5rem;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+#sign-in-submit {
+    /* padding: 0.5rem; */
+    width: 30rem;
+    height: 3.5rem;
+    border-radius: 1rem;
+    font-size: 1.8rem;
+    background: var(--btn-color-ligth);
+    color: #fff;
+}
+
+#sign-in-window-questions {
+    padding-top: 2rem;
+    border-top: 0.1rem solid var(--text-color);
+}
+
+#sign-in-window-questions button {
+    color: var(--btn-color-ligth);
+    font-size: 1.8rem;
+}
+
+#sign-in-window-questions button:hover {
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+
+/* SIGN UP WINDOW */
+
+#sign-up-window {
+    width: 40rem;
+    height: 60rem;
+}
+
+.sign-up-close {
+    position: absolute;
+    cursor: pointer;
+    left: 2rem;
+    color: var(--text-color);
+}
+
+#sign-up-window-welcome h1 {
+    margin: 2rem 0;
+}
+
+#sign-up-window-welcome .info {
+    color: var(--text-color);
+}
+
+#sign-up-window-welcome .info {
+    color: var(--text-color);
+}
+
+#sign-up-window-data {
+    margin: 2rem;
+}
+
+#sign-up-window-data input {
+    width: 30rem;
+    height: 2.5rem;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+#sign-up-submit {
+    /* padding: 0.5rem; */
+    margin: 2rem 0 0 0;
+    width: 30rem;
+    height: 3.5rem;
+    border-radius: 1rem;
+    font-size: 1.8rem;
+    background: var(--btn-color-ligth);
+    color: #fff;
+}
+
+#sign-up-window-questions {
+    padding-top: 2rem;
+    border-top: 0.1rem solid var(--text-color);
+}
+
+#sign-up-window-questions button {
+    color: var(--btn-color-ligth);
+    font-size: 1.8rem;
+}
+
+#sign-up-window-questions button:hover {
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+#terms-checkbox {
+    font-size: 1.6rem;
+}
+
+#terms-checkbox a {
+    color: var(--btn-color-ligth);
+}
+
+#newsletter-checkbox {
+    display: inline-block;
+    font-size: 1.6rem;
+}
+
+
+/* PWD RESET WINDOW */
+
+#pwd-reset-window {
+    width: 40rem;
+    height: 40rem;
+}
+
+.pwd-reset-close {
+    position: absolute;
+    cursor: pointer;
+    left: 2rem;
+    color: var(--text-color);
+}
+
+#pwd-reset-window-welcome h3 {
+    margin: 2rem 0;
+}
+
+#pwd-reset-window p {
+    margin: 3rem;
+}
+
+#pwd-reset-window-welcome .info {
+    color: var(--text-color);
+}
+
+#pwd-reset-window-welcome .info {
+    color: var(--text-color);
+}
+
+#pwd-reset-window-data {
+    margin: 2rem;
+}
+
+#pwd-reset-window-data input {
+    width: 30rem;
+    height: 2.5rem;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+#pwd-reset-submit {
+    width: 30rem;
+    height: 3.5rem;
+    border-radius: 1rem;
+    font-size: 1.8rem;
+    background: var(--btn-color-ligth);
+    color: #fff;
+}
+
+#pwd-reset-window-questions {
+    border-top: 0.1rem solid var(--text-color);
+}
+
+#pwd-reset-window-questions button {
+    color: var(--btn-color-ligth);
+    font-size: 1.8rem;
+}
+
+#pwd-reset-window-questions button:hover {
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+
+/* SIGN IN and SING UP BTN */
+
+#sign-in-btn {
+    background: none;
+    color: var(--text-color);
+}
+
+#sign-up-btn {
+    margin: 1.3rem 2rem 0 0;
+    background: var(--btn-color-ligth);
+    color: #fff;
+    font-weight: bold;
+}
+
+#sign-up-btn:hover {
+    background: var(--btn-color-dark);
+}
+
+#sign-in-window-btn {
+    background: var(--btn-color-ligth);
+    color: #fff;
+    font-weight: bold;
+}
+
+#sign-in-window-btn:hover {
+    background: var(--btn-color-dark);
+}
+
+
+/* USABLE CLASSES */
+
+.show {
+    display: block;
+    transition: transform 1s;
+}
+
+.hide {
+    display: none;
+    transition: transform 1s;
+}
+
+.active-el {
+    font-weight: bold;
+    color: #000;
+}
+
+.rotate0deg {
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+}
+
+.rotate90deg {
+    transform: rotate(90deg);
+    transition: transform 0.3s;
+}
+
+.light-text {
+    color: #fff;
+}
+
+.mouse-over {
+    color: black;
+    font-size: 3.2rem;
+}
+
+.mouse-out {
+    color: #a5a5a5;
+    font-size: 2rem;
+}

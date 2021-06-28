@@ -1,0 +1,36 @@
+DELETE-BTN
+<i class="fas fa-times"></i>
+
+FAV-BTN
+<i class="far fa-star"></i>
+
+COPY-BTN
+<i class="far fa-clone"></i>
+
+UNLOCK-BTN
+<i class="fas fa-unlock"></i>
+
+LOCK-BTN
+<i class="fas fa-lock"></i>
+
+NAV-BAR
+<i class="fas fa-bars"></i>
+
+CHEVRON-DOWN
+<i class="fas fa-chevron-down"></i>
+
+CHEVRON-UP
+<i class="fas fa-chevron-up"></i>
+
+---------------------
+
+Żaby wykonać coś na tablicy, należy użyć petli, która wykona funckję, na każdym wciśniętym indeksie
+
+for (const btn of btns) {
+
+    btn.addEventListener('click', function() {
+        console.log(this.innerText);
+    })
+
+    // btn == poszczególny element tablicy (console.log(btn) - wyświetli wszystkie elementy tablicy)
+ };
