@@ -20,7 +20,7 @@ body {
 
 header {
     display: flex;
-    height: 8vh;
+    height: 10vh;
     width: 100%;
 }
 
@@ -140,7 +140,7 @@ li {
 /* NAV */
 
 nav {
-    height: 8vh;
+    height: 10vh;
     display: flex;
     border-top: 1px solid var(--text-color);
 }
@@ -173,7 +173,7 @@ nav {
 /* MAIN */
 
 main {
-    height: 84vh;
+    height: 80vh;
 }
 
 #colors-generator {
@@ -247,18 +247,30 @@ main {
 #fav-colors {
     width: 40rem;
     height: 60vh;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--text-color);
+}
+
+.fav-color-info {
+    width: 70%;
+    text-transform: uppercase;
+}
+
+.fav-color-preview {
+    width: 20%;
 }
 
 #fav-colors li {
-    display: inline-block;
-    margin: 1rem;
+    display: flex;
+    margin: 2rem;
 }
 
-.example-color {
-    text-align: center;
-    width: 3rem;
-    height: 3rem;
-    background: lime;
+.delete-fav-color {
+    width: 10%;
+    text-align: right;
+    cursor: pointer;
 }
 
 .window {

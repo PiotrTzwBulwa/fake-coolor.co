@@ -1,3 +1,5 @@
+const testBtn = document.querySelector('#generator-info');
+
 const moreWindow = document.querySelector('#nav-more-window');
 const signInWindow = document.querySelector('#sign-in-window');
 const signUpWindow = document.querySelector('#sign-up-window');
@@ -9,7 +11,8 @@ const colorTools = document.getElementsByClassName('color-tools');
 const tools = colorsGenerator.getElementsByTagName('i');
 const colors = document.getElementsByClassName('colors');
 const rgbColors = document.getElementsByClassName('color-rgb');
-
+let ulFavColor = document.querySelector('#ul-fav-color');
+let allFavColors = ulFavColor.getElementsByTagName('li');
 
 const signInBtn = document.querySelector('#sign-in-btn');
 const signUpBtn = document.querySelector('#sign-up-btn');
@@ -37,6 +40,10 @@ const favColorBtns = document.getElementsByClassName('tool-favorite');
 const copyColorBtns = document.getElementsByClassName('tool-copy');
 const unlockColorBtns = document.getElementsByClassName('tool-unlock');
 const lockColorBtns = document.getElementsByClassName('tool-lock');
+let deleteFavColorBtns = document.getElementsByClassName('delete-fav-color');
+
+let idNumber = 0;
+
 
 
 // DELETE COLOR
@@ -44,7 +51,7 @@ const deleteColor = (e) => {
     const colorToDelete = e.target.closest('.colors')
     colorToDelete.remove();
 
-    // adding new COLORS' width
+    // add new COLORS' width
     const newWidth = 100 / colors.length;
 
     for (const color of colors) {
@@ -72,12 +79,12 @@ const changeColor = (e) => {
 
                 let newColor = `rgb(${r}, ${g}, ${b})`;
                 color.style.background = newColor;
-                console.log(newColor);
+                // console.log(newColor);
 
                 // changing RGB COLOR code
                 for (const rgbColor of rgbColors) {
                     // console.log(rgbColor);
-                    console.log(newColor);
+                    // console.log(newColor);
                 }
 
                 if (r <= 150 && g <= 150 && b <= 150) {
@@ -218,3 +225,44 @@ signInLink.addEventListener('click', () => {
     signInWindow.classList.toggle('show');
     signInWindow.classList.toggle('hide');
 });
+
+
+// ADD FAVORITE COLOR
+
+const addFavColor = () => {
+    if (allFavColors.length < 10) {
+        let newFavColor = document.createElement('li');
+        idNumber++;
+        newFavColor.setAttribute('id', `fav-color-${idNumber}`);
+        let newFavColorInfo = document.createElement('span');
+        newFavColorInfo.setAttribute('class', 'fav-color-info');
+        newFavColorInfo.innerText = 'RGB (r, g, b)';
+        let newFavColorPreview = document.createElement('div');
+        newFavColorPreview.setAttribute('class', 'fav-color-preview');
+        newFavColorPreview.setAttribute('style', 'background: blue');
+        let newFavColorDeleteBtn = document.createElement('i');
+        newFavColorDeleteBtn.setAttribute('class', 'fas fa-times delete-fav-color');
+
+        ulFavColor.appendChild(newFavColor)
+        newFavColor.appendChild(newFavColorInfo);
+        newFavColor.appendChild(newFavColorPreview);
+        newFavColor.appendChild(newFavColorDeleteBtn);
+    } else {
+        return;
+    }
+
+}
+
+for (const favColorBtn of favColorBtns) {
+    favColorBtn.addEventListener('click', addFavColor);
+}
+
+
+// DELETE FAVORITE COLOR
+
+const deleteFavoriteColor = (e) => {
+    const deleteFavColor = e.target.closest('li');
+    deleteFavColor.remove();
+};
+
+ulFavColor.addEventListener('click', deleteFavoriteColor);
