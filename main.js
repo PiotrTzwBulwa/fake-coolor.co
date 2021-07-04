@@ -10,7 +10,7 @@ const colorsGenerator = document.querySelector('#colors-generator');
 const colorTools = document.getElementsByClassName('color-tools');
 const tools = colorsGenerator.getElementsByTagName('i');
 const colors = document.getElementsByClassName('colors');
-const rgbColors = document.getElementsByClassName('color-rgb');
+const rgbColors = document.getElementsByClassName('rgb');
 let ulFavColor = document.querySelector('#ul-fav-color');
 let allFavColors = ulFavColor.getElementsByTagName('li');
 
@@ -123,56 +123,52 @@ window.addEventListener('keyup', changeColor);
 
 
 // CHANGE COLORS
-const changeColorInfo = () =>
-    fetch('./data_colors_arr.json')
-    .then(resp => resp.json())
-    .then(data => {
-        const colorLength = data.length;
+const changeColorInfo = (e) => {
 
-        const randomNumber1 = Math.floor(Math.random() * colorLength);
-        const randomNumber2 = Math.floor(Math.random() * colorLength);
-        const randomNumber3 = Math.floor(Math.random() * colorLength);
-        const randomNumber4 = Math.floor(Math.random() * colorLength);
-        const randomNumber5 = Math.floor(Math.random() * colorLength);
-
-        colorName1.innerText = data[randomNumber1].name;
-        colorName2.innerText = data[randomNumber2].name;
-        colorName3.innerText = data[randomNumber3].name;
-        colorName4.innerText = data[randomNumber4].name;
-        colorName5.innerText = data[randomNumber5].name;
-
-        colorHex1.innerText = data[randomNumber1].hex;
-        colorHex2.innerText = data[randomNumber2].hex;
-        colorHex3.innerText = data[randomNumber3].hex;
-        colorHex4.innerText = data[randomNumber4].hex;
-        colorHex5.innerText = data[randomNumber5].hex;
-
-        colorRgb1.innerText = data[randomNumber1].rgb;
-        colorRgb2.innerText = data[randomNumber2].rgb;
-        colorRgb3.innerText = data[randomNumber3].rgb;
-        colorRgb4.innerText = data[randomNumber4].rgb;
-        colorRgb5.innerText = data[randomNumber5].rgb;
-
-        color1.style.background = `rgb${data[randomNumber1].rgb}`;
-        color2.style.background = `rgb${data[randomNumber2].rgb}`;
-        color3.style.background = `rgb${data[randomNumber3].rgb}`;
-        color4.style.background = `rgb${data[randomNumber4].rgb}`;
-        color5.style.background = `rgb${data[randomNumber5].rgb}`;
-    })
-    .catch(err => {
-        console.error(err);
-        alert(`Upsss! Something went wrong 😥`)
-    });
-
-changeColorInfo();
-
-const checkingSpacebar = (e) => {
     if (e.keyCode === 32) {
-        changeColorInfo();
-    }
-};
+        fetch('./data_colors_arr.json')
+            .then(resp => resp.json())
+            .then(data => {
+                const colorLength = data.length;
 
-window.addEventListener('keyup', checkingSpacebar);
+                const randomNumber1 = Math.floor(Math.random() * colorLength);
+                const randomNumber2 = Math.floor(Math.random() * colorLength);
+                const randomNumber3 = Math.floor(Math.random() * colorLength);
+                const randomNumber4 = Math.floor(Math.random() * colorLength);
+                const randomNumber5 = Math.floor(Math.random() * colorLength);
+
+                colorName1.innerText = data[randomNumber1].name;
+                colorName2.innerText = data[randomNumber2].name;
+                colorName3.innerText = data[randomNumber3].name;
+                colorName4.innerText = data[randomNumber4].name;
+                colorName5.innerText = data[randomNumber5].name;
+
+                colorHex1.innerText = data[randomNumber1].hex;
+                colorHex2.innerText = data[randomNumber2].hex;
+                colorHex3.innerText = data[randomNumber3].hex;
+                colorHex4.innerText = data[randomNumber4].hex;
+                colorHex5.innerText = data[randomNumber5].hex;
+
+                colorRgb1.innerText = `RGB${data[randomNumber1].rgb}`;
+                colorRgb2.innerText = `RGB${data[randomNumber2].rgb}`;
+                colorRgb3.innerText = `RGB${data[randomNumber3].rgb}`;
+                colorRgb4.innerText = `RGB${data[randomNumber4].rgb}`;
+                colorRgb5.innerText = `RGB${data[randomNumber5].rgb}`;
+
+                color1.style.background = `rgb${data[randomNumber1].rgb}`;
+                color2.style.background = `rgb${data[randomNumber2].rgb}`;
+                color3.style.background = `rgb${data[randomNumber3].rgb}`;
+                color4.style.background = `rgb${data[randomNumber4].rgb}`;
+                color5.style.background = `rgb${data[randomNumber5].rgb}`;
+            })
+            .catch(err => {
+                console.error(err);
+                alert(`Upsss! Something went wrong 😥`)
+            });
+    }
+}
+
+window.addEventListener('keyup', changeColorInfo);
 
 
 // MOUSEOVER TOOL, MOUSEOUT TOOL
@@ -308,15 +304,20 @@ signInLink.addEventListener('click', () => {
 
 const addFavColor = () => {
     if (allFavColors.length < 10) {
+        // for (const rgbColor of rgbColors) {
+        //     const test = rgbColor.innerText;
+        //     console.log(test);
+        // }
+
         let newFavColor = document.createElement('li');
         idNumber++;
         newFavColor.setAttribute('id', `fav-color-${idNumber}`);
         let newFavColorInfo = document.createElement('span');
         newFavColorInfo.setAttribute('class', 'fav-color-info');
-        newFavColorInfo.innerText = 'RGB (r, g, b)';
+        newFavColorInfo.innerText = colorRgb1.innerText;
         let newFavColorPreview = document.createElement('div');
         newFavColorPreview.setAttribute('class', 'fav-color-preview');
-        newFavColorPreview.setAttribute('style', 'background: blue');
+        newFavColorPreview.setAttribute('style', `background: ${colorRgb1.innerText}`);
         let newFavColorDeleteBtn = document.createElement('i');
         newFavColorDeleteBtn.setAttribute('class', 'fas fa-times delete-fav-color');
 
@@ -327,7 +328,6 @@ const addFavColor = () => {
     } else {
         return;
     }
-
 }
 
 for (const favColorBtn of favColorBtns) {
