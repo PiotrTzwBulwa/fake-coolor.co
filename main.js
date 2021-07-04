@@ -42,8 +42,31 @@ const unlockColorBtns = document.getElementsByClassName('tool-unlock');
 const lockColorBtns = document.getElementsByClassName('tool-lock');
 let deleteFavColorBtns = document.getElementsByClassName('delete-fav-color');
 
-let idNumber = 0;
+const colorName1 = document.querySelector('#color-name-1');
+const colorName2 = document.querySelector('#color-name-2');
+const colorName3 = document.querySelector('#color-name-3');
+const colorName4 = document.querySelector('#color-name-4');
+const colorName5 = document.querySelector('#color-name-5');
 
+const colorHex1 = document.querySelector('#color-hex-1');
+const colorHex2 = document.querySelector('#color-hex-2');
+const colorHex3 = document.querySelector('#color-hex-3');
+const colorHex4 = document.querySelector('#color-hex-4');
+const colorHex5 = document.querySelector('#color-hex-5');
+
+const colorRgb1 = document.querySelector('#color-rgb-1');
+const colorRgb2 = document.querySelector('#color-rgb-2');
+const colorRgb3 = document.querySelector('#color-rgb-3');
+const colorRgb4 = document.querySelector('#color-rgb-4');
+const colorRgb5 = document.querySelector('#color-rgb-5');
+
+const color1 = document.querySelector('#color-1');
+const color2 = document.querySelector('#color-2');
+const color3 = document.querySelector('#color-3');
+const color4 = document.querySelector('#color-4');
+const color5 = document.querySelector('#color-5');
+
+let idNumber = 0;
 
 
 // DELETE COLOR
@@ -64,15 +87,14 @@ for (const deleteColorBtn of deleteColorBtns) {
     deleteColorBtn.addEventListener('click', deleteColor);
 };
 
-
+/*
 // CHANGE COLORS
 const changeColor = (e) => {
     if (e.keyCode === 32) {
-        if (e.target.classList.contains('locked')) {
-            return;
-        } else {
-            for (const color of colors) {
-
+        for (const color of colors) {
+            if (color.classList.contains('locked')) {
+                return;
+            } else {
                 const r = Math.round(Math.random() * 255);
                 const g = Math.round(Math.random() * 255);
                 const b = Math.round(Math.random() * 255);
@@ -92,10 +114,65 @@ const changeColor = (e) => {
                 }
             }
         }
+
     }
 };
 
 window.addEventListener('keyup', changeColor);
+*/
+
+
+// CHANGE COLORS
+const changeColorInfo = () =>
+    fetch('./data_colors_arr.json')
+    .then(resp => resp.json())
+    .then(data => {
+        const colorLength = data.length;
+
+        const randomNumber1 = Math.floor(Math.random() * colorLength);
+        const randomNumber2 = Math.floor(Math.random() * colorLength);
+        const randomNumber3 = Math.floor(Math.random() * colorLength);
+        const randomNumber4 = Math.floor(Math.random() * colorLength);
+        const randomNumber5 = Math.floor(Math.random() * colorLength);
+
+        colorName1.innerText = data[randomNumber1].name;
+        colorName2.innerText = data[randomNumber2].name;
+        colorName3.innerText = data[randomNumber3].name;
+        colorName4.innerText = data[randomNumber4].name;
+        colorName5.innerText = data[randomNumber5].name;
+
+        colorHex1.innerText = data[randomNumber1].hex;
+        colorHex2.innerText = data[randomNumber2].hex;
+        colorHex3.innerText = data[randomNumber3].hex;
+        colorHex4.innerText = data[randomNumber4].hex;
+        colorHex5.innerText = data[randomNumber5].hex;
+
+        colorRgb1.innerText = data[randomNumber1].rgb;
+        colorRgb2.innerText = data[randomNumber2].rgb;
+        colorRgb3.innerText = data[randomNumber3].rgb;
+        colorRgb4.innerText = data[randomNumber4].rgb;
+        colorRgb5.innerText = data[randomNumber5].rgb;
+
+        color1.style.background = `rgb${data[randomNumber1].rgb}`;
+        color2.style.background = `rgb${data[randomNumber2].rgb}`;
+        color3.style.background = `rgb${data[randomNumber3].rgb}`;
+        color4.style.background = `rgb${data[randomNumber4].rgb}`;
+        color5.style.background = `rgb${data[randomNumber5].rgb}`;
+    })
+    .catch(err => {
+        console.error(err);
+        alert(`Upsss! Something went wrong 😥`)
+    });
+
+changeColorInfo();
+
+const checkingSpacebar = (e) => {
+    if (e.keyCode === 32) {
+        changeColorInfo();
+    }
+};
+
+window.addEventListener('keyup', checkingSpacebar);
 
 
 // MOUSEOVER TOOL, MOUSEOUT TOOL

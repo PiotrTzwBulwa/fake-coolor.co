@@ -108,7 +108,7 @@
 
     <main>
         <div id="colors-generator">
-            <div id="color-1" class="colors" style="background: rgb(220, 220, 220);">
+            <div id="color-1" class="colors" style="background: rgb(113, 75, 35);">
                 <div class="color-tools">
                     <div class="tools">
                         <i class="fas fa-times tool-delete mouse-out"></i>
@@ -128,11 +128,13 @@
                 </div>
 
                 <div class="color-info">
-                    <div class="info color-rgb">rgb(220, 220, 220)</div>
+                    <div class="info" id="color-rgb-1">rgb(113, 75, 35)</div>
+                    <div class="info" id="color-name-1">Raw Umber</div>
+                    <div class="info" id="color-hex-1">#714B23</div>
                 </div>
             </div>
 
-            <div id="color-2" class="colors" style="background: rgb(25, 25, 112);">
+            <div id="color-2" class="colors" style="background: rgb(231, 198, 151);">
                 <div class="color-tools">
                     <div class="tools">
                         <i class="fas fa-times tool-delete mouse-out"></i>
@@ -152,13 +154,13 @@
                 </div>
 
                 <div class="color-info">
-                    <div class="info color-rgb">rgb(25, 25, 112)</div>
-                    <!-- <div class="info color-hex">#191970</div>
-                    <div class="info color-name">MidnightBlue</div> -->
+                    <div class="info" id="color-rgb-2">rgb(231, 198, 151)</div>
+                    <div class="info" id="color-name-2">Gold</div>
+                    <div class="info" id="color-hex-2">#E7C697</div>
                 </div>
             </div>
 
-            <div id="color-3" class="colors" style="background: rgb(152, 251, 152);">
+            <div id="color-3" class="colors" style="background: rgb(230, 168, 215);">
                 <div class="color-tools">
                     <div class="tools">
                         <i class="fas fa-times tool-delete mouse-out"></i>
@@ -178,13 +180,13 @@
                 </div>
 
                 <div class="color-info">
-                    <div class="info color-rgb">rgb(152, 251, 152)</div>
-                    <!-- <div class="info color-hex">#98FB98</div>
-                    <div class="info color-name">PaleGreen</div> -->
+                    <div class="info" id="color-rgb-3">rgb(230, 168, 215)</div>
+                    <div class="info" id="color-name-3">Orchid</div>
+                    <div class="info" id="color-hex-3">#E6A8D7</div>
                 </div>
             </div>
 
-            <div id="color-4" class="colors" style="background: rgb(240, 230, 140);">
+            <div id="color-4" class="colors" style="background: rgb(255, 244, 79);">
                 <div class="color-tools">
                     <div class="tools">
                         <i class="fas fa-times tool-delete mouse-out"></i></div>
@@ -201,13 +203,13 @@
                 </div>
 
                 <div class="color-info">
-                    <div class="info color-rgb">rgb(240, 230, 140)</div>
-                    <!-- <div class="info color-hex">#F0E68C</div>
-                    <div class="info color-name">Khaki</div> -->
+                    <div class="info" id="color-rgb-4">rgb(255, 244, 79)</div>
+                    <div class="info" id="color-name-4">Lemon Yello</div>
+                    <div class="info" id="color-hex-4">#FFF44F</div>
                 </div>
             </div>
 
-            <div id="color-5" class="colors" style="background: rgb(139, 0, 0);">
+            <div id="color-5" class="colors" style="background: rgb(227, 37, 107);">
                 <div class="color-tools">
                     <div class="tools">
                         <i class="fas fa-times tool-delete mouse-out"></i>
@@ -227,9 +229,9 @@
                 </div>
 
                 <div class="color-info">
-                    <div class="info color-rgb">rgb(139, 0, 0)</div>
-                    <!-- <div class="info color-hex">#8B0000</div>
-                    <div class="info color-name">FireBrick</div> -->
+                    <div class="info" id="color-rgb-5">rgb(227, 37, 107)</div>
+                    <div class="info" id="color-name-5">Razzmatazz</div>
+                    <div class="info" id="color-hex-5">#E3256B</div>
                 </div>
             </div>
 
@@ -304,17 +306,16 @@
             <input class="sign-up-input name" type="text" placeholder="Full Name">
             <input class="sign-up-input email" type="email" placeholder="Email / Username">
             <input class="sign-up-input password" type="password" placeholder="Password">
-            <div id="terms-checkbox">
-                <input type="checkbox" id="terms" name="terms"><label for="terms">I agree to your 
-                    <a href="http://coolors.co/terms-of-service" target="_blank" rel="noopener noreferrer">Terms and Conditions</a>
-                     and 
-                     <a href="http://coolors.co/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-                     </label>
+            <input class="sign-up-input password-confirm" type="password" placeholder="Confirm password">
+            <div id="password-requirements">
+                <span class="password-info"> Your password must:</span>
+                <ul>
+                    <li>&#9724; be at leats 8 characters long</li>
+                    <li>&#9724; contains at least one uppercase</li>
+                    <li>&#9724; contains at least one number digit</li>
+                    <li>&#9724; contains at least one special character</li>
+                </ul>
             </div>
-            <div id="newsletter-checkbox">
-                <input type="checkbox" id="newsletter" name="newsletter"><label for="newsletter">I want to subscribe to the newsletter</label>
-            </div>
-
             <input id="sign-up-submit" type="submit" value="Create your free accunt">
         </form>
 

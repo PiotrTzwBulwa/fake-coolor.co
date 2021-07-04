@@ -37,7 +37,7 @@ button {
 
 button:hover {
     cursor: pointer;
-    color: #000;
+    color: var(--btn-color-ligth);
     font-weight: bold;
 }
 
@@ -112,14 +112,13 @@ li {
     font-size: 1.8rem;
     text-align: center;
     color: var(--text-color);
-    /* border: 0.3rem solid #000; */
 }
 
 .header-nav-span:hover,
 .header-nav-span a:hover {
     cursor: pointer;
     font-weight: bold;
-    color: #000;
+    color: var(--btn-color-ligth);
 }
 
 .nav-btn {
@@ -132,8 +131,8 @@ li {
 }
 
 #sign-in-btn:hover {
+    color: var(--btn-color-ligth);
     font-weight: bold;
-    color: #000;
 }
 
 
@@ -242,6 +241,17 @@ main {
 #menu-bar {
     width: 40rem;
     height: 60vh;
+}
+
+#menu-bar a:hover {
+    width: 25rem;
+    height: 2.6rem;
+    padding: 0.2rem;
+    border-radius: 1rem;
+}
+
+#menu-bar a:hover {
+    background: #ececec;
 }
 
 #fav-colors {
@@ -437,6 +447,18 @@ main {
     text-decoration: underline;
 }
 
+.password-info {
+    margin: 3.5rem;
+}
+
+#password-requirements,
+#password-requirements li {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    margin: 0.5rem 0 0 2rem;
+    text-align: left;
+}
+
 #terms-checkbox {
     font-size: 1.6rem;
 }
@@ -559,7 +581,7 @@ main {
 
 .active-el {
     font-weight: bold;
-    color: #000;
+    color: var(--btn-color-ligth);
 }
 
 .rotate0deg {
