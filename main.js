@@ -66,6 +66,12 @@ const color3 = document.querySelector('#color-3');
 const color4 = document.querySelector('#color-4');
 const color5 = document.querySelector('#color-5');
 
+const favColorBtn1 = document.querySelector('#fav-btn-1');
+const favColorBtn2 = document.querySelector('#fav-btn-2');
+const favColorBtn3 = document.querySelector('#fav-btn-3');
+const favColorBtn4 = document.querySelector('#fav-btn-4');
+const favColorBtn5 = document.querySelector('#fav-btn-5');
+
 let idNumber = 0;
 
 
@@ -299,7 +305,7 @@ signInLink.addEventListener('click', () => {
     signInWindow.classList.toggle('hide');
 });
 
-
+/*
 // ADD FAVORITE COLOR
 
 const addFavColor = () => {
@@ -333,7 +339,135 @@ const addFavColor = () => {
 for (const favColorBtn of favColorBtns) {
     favColorBtn.addEventListener('click', addFavColor);
 }
+*/
 
+// ADD FAVORITE COLOR
+
+const addFavColor1 = () => {
+    if (allFavColors.length < 10) {
+        // for (const rgbColor of rgbColors) {
+        //     const test = rgbColor.innerText;
+        //     console.log(test);
+        // }
+
+        let newFavColor = document.createElement('li');
+        idNumber++;
+        newFavColor.setAttribute('id', `fav-color-${idNumber}`);
+        let newFavColorInfo = document.createElement('span');
+        newFavColorInfo.setAttribute('class', 'fav-color-info');
+        newFavColorInfo.innerText = colorRgb1.innerText;
+        let newFavColorPreview = document.createElement('div');
+        newFavColorPreview.setAttribute('class', 'fav-color-preview');
+        newFavColorPreview.setAttribute('style', `background: ${colorRgb1.innerText}`);
+        let newFavColorDeleteBtn = document.createElement('i');
+        newFavColorDeleteBtn.setAttribute('class', 'fas fa-times delete-fav-color');
+
+        ulFavColor.appendChild(newFavColor)
+        newFavColor.appendChild(newFavColorInfo);
+        newFavColor.appendChild(newFavColorPreview);
+        newFavColor.appendChild(newFavColorDeleteBtn);
+    } else {
+        return;
+    }
+};
+
+const addFavColor2 = () => {
+    if (allFavColors.length < 10) {
+        let newFavColor = document.createElement('li');
+        idNumber++;
+        newFavColor.setAttribute('id', `fav-color-${idNumber}`);
+        let newFavColorInfo = document.createElement('span');
+        newFavColorInfo.setAttribute('class', 'fav-color-info');
+        newFavColorInfo.innerText = colorRgb2.innerText;
+        let newFavColorPreview = document.createElement('div');
+        newFavColorPreview.setAttribute('class', 'fav-color-preview');
+        newFavColorPreview.setAttribute('style', `background: ${colorRgb2.innerText}`);
+        let newFavColorDeleteBtn = document.createElement('i');
+        newFavColorDeleteBtn.setAttribute('class', 'fas fa-times delete-fav-color');
+
+        ulFavColor.appendChild(newFavColor)
+        newFavColor.appendChild(newFavColorInfo);
+        newFavColor.appendChild(newFavColorPreview);
+        newFavColor.appendChild(newFavColorDeleteBtn);
+    } else {
+        return;
+    }
+};
+
+const addFavColor3 = () => {
+    if (allFavColors.length < 10) {
+        let newFavColor = document.createElement('li');
+        idNumber++;
+        newFavColor.setAttribute('id', `fav-color-${idNumber}`);
+        let newFavColorInfo = document.createElement('span');
+        newFavColorInfo.setAttribute('class', 'fav-color-info');
+        newFavColorInfo.innerText = colorRgb3.innerText;
+        let newFavColorPreview = document.createElement('div');
+        newFavColorPreview.setAttribute('class', 'fav-color-preview');
+        newFavColorPreview.setAttribute('style', `background: ${colorRgb3.innerText}`);
+        let newFavColorDeleteBtn = document.createElement('i');
+        newFavColorDeleteBtn.setAttribute('class', 'fas fa-times delete-fav-color');
+
+        ulFavColor.appendChild(newFavColor)
+        newFavColor.appendChild(newFavColorInfo);
+        newFavColor.appendChild(newFavColorPreview);
+        newFavColor.appendChild(newFavColorDeleteBtn);
+    } else {
+        return;
+    }
+};
+
+const addFavColor4 = () => {
+    if (allFavColors.length < 10) {
+        let newFavColor = document.createElement('li');
+        idNumber++;
+        newFavColor.setAttribute('id', `fav-color-${idNumber}`);
+        let newFavColorInfo = document.createElement('span');
+        newFavColorInfo.setAttribute('class', 'fav-color-info');
+        newFavColorInfo.innerText = colorRgb4.innerText;
+        let newFavColorPreview = document.createElement('div');
+        newFavColorPreview.setAttribute('class', 'fav-color-preview');
+        newFavColorPreview.setAttribute('style', `background: ${colorRgb4.innerText}`);
+        let newFavColorDeleteBtn = document.createElement('i');
+        newFavColorDeleteBtn.setAttribute('class', 'fas fa-times delete-fav-color');
+
+        ulFavColor.appendChild(newFavColor)
+        newFavColor.appendChild(newFavColorInfo);
+        newFavColor.appendChild(newFavColorPreview);
+        newFavColor.appendChild(newFavColorDeleteBtn);
+    } else {
+        return;
+    }
+};
+
+const addFavColor5 = () => {
+    if (allFavColors.length < 10) {
+        let newFavColor = document.createElement('li');
+        idNumber++;
+        newFavColor.setAttribute('id', `fav-color-${idNumber}`);
+        let newFavColorInfo = document.createElement('span');
+        newFavColorInfo.setAttribute('class', 'fav-color-info');
+        newFavColorInfo.innerText = colorRgb5.innerText;
+        let newFavColorPreview = document.createElement('div');
+        newFavColorPreview.setAttribute('class', 'fav-color-preview');
+        newFavColorPreview.setAttribute('style', `background: ${colorRgb5.innerText}`);
+        let newFavColorDeleteBtn = document.createElement('i');
+        newFavColorDeleteBtn.setAttribute('class', 'fas fa-times delete-fav-color');
+
+        ulFavColor.appendChild(newFavColor)
+        newFavColor.appendChild(newFavColorInfo);
+        newFavColor.appendChild(newFavColorPreview);
+        newFavColor.appendChild(newFavColorDeleteBtn);
+    } else {
+        return;
+    }
+};
+
+favColorBtn1.addEventListener('click', addFavColor1);
+favColorBtn2.addEventListener('click', addFavColor2);
+favColorBtn3.addEventListener('click', addFavColor3);
+favColorBtn4.addEventListener('click', addFavColor4);
+favColorBtn5.addEventListener('click', addFavColor5);
 
 // DELETE FAVORITE COLOR
 
