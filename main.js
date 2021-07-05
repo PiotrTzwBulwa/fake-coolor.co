@@ -1,4 +1,4 @@
-const testBtn = document.querySelector('#generator-info');
+// const testBtn = document.querySelector('#generator-info');
 
 const moreWindow = document.querySelector('#nav-more-window');
 const signInWindow = document.querySelector('#sign-in-window');
@@ -23,11 +23,16 @@ const signUpLink = signUpWindow.querySelector('.sign-in-from-sign-out');
 const pwdResetLink = signInWindow.querySelector('.pwd-reset');
 const burgerBtn = document.querySelector('.fa-bars');
 const favColorsBtn = document.querySelector('.fav-colors-btn');
+const signInSubmit = signInWindow.querySelector('#sign-in-submit');
 const signInEmail = signInWindow.querySelector('.email');
 const signInPassword = signInWindow.querySelector('.password');
-const signUpName = signUpWindow.querySelector('.name');
+const signUpSubmit = signUpWindow.querySelector('#sign-up-submit');
+// const signUpName = signUpWindow.querySelector('.name');
 const signUpEmail = signUpWindow.querySelector('.email');
 const signUpPassword = signUpWindow.querySelector('.password');
+const signUpPasswordConfirm = signUpWindow.querySelector('.password-confirm');
+const signUpWorning = signUpWindow.querySelector('#worning-info');
+const pwdResetSubmit = pwdResetWindow.querySelector('#pwd-reset-submit');
 const pwdResetEmail = pwdResetWindow.querySelector('.email');
 const pwdResetPassword = pwdResetWindow.querySelector('.password');
 
@@ -260,8 +265,17 @@ signInWindowCloseBtn.addEventListener('click', () => {
     signInPassword.value = '';
 });
 
+signInSubmit.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log('ads');
+})
+
 
 // SIGN UP WINDOW
+// signUpSubmit
+// signUpEmail
+// signUpPassword
+
 signUpBtn.addEventListener('click', () => {
     signUpWindow.classList.toggle('show');
     signUpWindow.classList.toggle('hide');
@@ -270,7 +284,6 @@ signUpBtn.addEventListener('click', () => {
 signUpWindowCloseBtn.addEventListener('click', () => {
     signUpWindow.classList.toggle('show');
     signUpWindow.classList.toggle('hide');
-    signUpName.value = '';
     signUpEmail.value = '';
     signUpPassword.value = '';
 });
@@ -281,6 +294,42 @@ signUpLink.addEventListener('click', () => {
     signInWindow.classList.toggle('show');
     signInWindow.classList.toggle('hide');
 });
+
+signUpSubmit.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    // PASSWORD VALIDATOR
+    const pwdLetters = /[a-z]/i;
+    const pedNumbers = /[0-9]/;
+    const pwdSpecial = /[!@#$%^&*()]/;
+    const pwdMinValue = 8;
+
+    if (signUpPassword.value.length < pwdMinValue) {
+        signUpWorning.innerText = 'Your password is not strong enough!';
+        signUpWorning.style.display = 'block';
+    } else if (!signUpPassword.value.match(pwdLetters)) {
+        signUpWorning.innerText = 'Your password is not strong enough!';
+        signUpWorning.style.display = 'block';
+    } else if (!signUpPassword.value.match(pedNumbers)) {
+        signUpWorning.innerText = 'Your password is not strong enough!';
+        signUpWorning.style.display = 'block';
+    } else if (!signUpPassword.value.match(pwdSpecial)) {
+        signUpWorning.innerText = 'Your password is not strong enough!';
+        signUpWorning.style.display = 'block';
+    } else {
+        signUpWorning.style.display = 'none';
+        console.log('jest ok');
+    }
+
+    // // PASSWORD CONFIRMATION
+    // if (signUpPassword.value !== signUpPasswordConfirm.value) {
+    //     signUpWorning.innerText = 'The password confirmation does not match!';
+    //     signUpWorning.style.display = 'block';
+    // } else {
+    //     signUpWorning.style.display = 'none';
+    //     console.log('pwd confirmation is OK');
+    // }
+})
 
 
 // PWD RESET WINDOW
@@ -298,12 +347,17 @@ pwdResetWindowCloseBtn.addEventListener('click', () => {
     pwdResetPassword.value = '';
 });
 
+pwdResetSubmit.addEventListener('click', (e) => {
+    e.preventDefault();
+})
+
 signInLink.addEventListener('click', () => {
     pwdResetWindow.classList.toggle('show');
     pwdResetWindow.classList.toggle('hide');
     signInWindow.classList.toggle('show');
     signInWindow.classList.toggle('hide');
 });
+
 
 /*
 // ADD FAVORITE COLOR
@@ -366,6 +420,10 @@ const addFavColor1 = () => {
         newFavColor.appendChild(newFavColorInfo);
         newFavColor.appendChild(newFavColorPreview);
         newFavColor.appendChild(newFavColorDeleteBtn);
+
+        favColors.classList.add('show');
+        favColors.classList.remove('hide');
+        favColorsBtn.classList.add('active-el');
     } else {
         return;
     }
@@ -389,6 +447,10 @@ const addFavColor2 = () => {
         newFavColor.appendChild(newFavColorInfo);
         newFavColor.appendChild(newFavColorPreview);
         newFavColor.appendChild(newFavColorDeleteBtn);
+
+        favColors.classList.add('show');
+        favColors.classList.remove('hide');
+        favColorsBtn.classList.add('active-el');
     } else {
         return;
     }
@@ -412,6 +474,10 @@ const addFavColor3 = () => {
         newFavColor.appendChild(newFavColorInfo);
         newFavColor.appendChild(newFavColorPreview);
         newFavColor.appendChild(newFavColorDeleteBtn);
+
+        favColors.classList.add('show');
+        favColors.classList.remove('hide');
+        favColorsBtn.classList.add('active-el');
     } else {
         return;
     }
@@ -435,6 +501,10 @@ const addFavColor4 = () => {
         newFavColor.appendChild(newFavColorInfo);
         newFavColor.appendChild(newFavColorPreview);
         newFavColor.appendChild(newFavColorDeleteBtn);
+
+        favColors.classList.add('show');
+        favColors.classList.remove('hide');
+        favColorsBtn.classList.add('active-el');
     } else {
         return;
     }
@@ -458,6 +528,10 @@ const addFavColor5 = () => {
         newFavColor.appendChild(newFavColorInfo);
         newFavColor.appendChild(newFavColorPreview);
         newFavColor.appendChild(newFavColorDeleteBtn);
+
+        favColors.classList.add('show');
+        favColors.classList.remove('hide');
+        favColorsBtn.classList.add('active-el');
     } else {
         return;
     }

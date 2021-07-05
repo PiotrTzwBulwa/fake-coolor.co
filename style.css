@@ -209,7 +209,7 @@ main {
 .rgb {
     height: 50%;
     text-transform: uppercase;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
 }
 
@@ -369,6 +369,10 @@ main {
     color: #fff;
 }
 
+#sign-in-submit:hover {
+    cursor: pointer;
+}
+
 #sign-in-window-questions {
     padding-top: 2rem;
     border-top: 0.1rem solid var(--text-color);
@@ -389,7 +393,7 @@ main {
 
 #sign-up-window {
     width: 40rem;
-    height: 60rem;
+    height: 55rem;
 }
 
 .sign-up-close {
@@ -422,6 +426,15 @@ main {
     font-size: 1.2rem;
 }
 
+#sign-up-window-data #worning-info {
+    display: none;
+    /* display: block; */
+    color: rgb(227, 37, 107);
+    font-size: 1.6rem;
+    margin: -1rem 0 0.5rem 0;
+    font-weight: bold;
+}
+
 #sign-up-submit {
     /* padding: 0.5rem; */
     margin: 2rem 0 0 0;
@@ -431,6 +444,10 @@ main {
     font-size: 1.8rem;
     background: var(--btn-color-ligth);
     color: #fff;
+}
+
+#sign-up-submit:hover {
+    cursor: pointer;
 }
 
 #sign-up-window-questions {
@@ -522,6 +539,10 @@ main {
     font-size: 1.8rem;
     background: var(--btn-color-ligth);
     color: #fff;
+}
+
+#pwd-reset-submit:hover {
+    cursor: pointer;
 }
 
 #pwd-reset-window-questions {
