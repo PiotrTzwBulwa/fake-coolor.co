@@ -272,10 +272,6 @@ signInSubmit.addEventListener('click', (e) => {
 
 
 // SIGN UP WINDOW
-// signUpSubmit
-// signUpEmail
-// signUpPassword
-
 signUpBtn.addEventListener('click', () => {
     signUpWindow.classList.toggle('show');
     signUpWindow.classList.toggle('hide');
@@ -319,16 +315,16 @@ signUpSubmit.addEventListener('click', (e) => {
     } else {
         signUpWorning.style.display = 'none';
         console.log('jest ok');
-    }
 
-    // // PASSWORD CONFIRMATION
-    // if (signUpPassword.value !== signUpPasswordConfirm.value) {
-    //     signUpWorning.innerText = 'The password confirmation does not match!';
-    //     signUpWorning.style.display = 'block';
-    // } else {
-    //     signUpWorning.style.display = 'none';
-    //     console.log('pwd confirmation is OK');
-    // }
+        // PASSWORD CONFIRMATION
+        if (signUpPassword.value !== signUpPasswordConfirm.value) {
+            signUpWorning.innerText = 'The password confirmation does not match!';
+            signUpWorning.style.display = 'block';
+        } else {
+            signUpWorning.style.display = 'none';
+            console.log('pwd confirmation is OK');
+        }
+    }
 })
 
 
@@ -395,8 +391,8 @@ for (const favColorBtn of favColorBtns) {
 }
 */
 
-// ADD FAVORITE COLOR
 
+// ADD FAVORITE COLOR
 const addFavColor1 = () => {
     if (allFavColors.length < 10) {
         // for (const rgbColor of rgbColors) {
